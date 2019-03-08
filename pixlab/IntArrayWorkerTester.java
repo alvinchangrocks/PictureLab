@@ -75,7 +75,7 @@ public class IntArrayWorkerTester
       worker.setMatrix(nums5);
       largest = worker.getLargest();
       System.out.println("Largest should be 6 and is " + largest);
-//  }
+      }
   
   /** Method to test getColTotal */
 //  public static void testGetColTotal()

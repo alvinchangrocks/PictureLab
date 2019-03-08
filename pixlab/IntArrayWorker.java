@@ -40,7 +40,17 @@ public class IntArrayWorker
     }
     return total;
   }
-  
+  public int getLargest()
+  {
+      int largest = 0;
+      for (int row = 0; row<matrix[0].length; row++)
+      {for (int col = 0; col< matrix[0].length; col++)
+       { if (largest< matrix[row][col])
+           largest = matrix[row][col];
+        }   
+    }
+    return largest;
+}
   /**
    * Method to return the total using a nested for-each loop
    * @return the total of the values in the array

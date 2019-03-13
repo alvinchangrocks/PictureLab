@@ -144,7 +144,39 @@ public class Picture extends SimplePicture
       }
     } 
   }
-  
+  public void mirrorHorizontal()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    Pixel topPixel = null;
+    Pixel botPixel = null;
+    int width = pixels.length;
+    for (int col = 0; col < width / 2; col++)
+    {
+      for (int row = 0; row < pixels.length; row++)
+      {
+        topPixel = pixels[col][row];
+        botPixel = pixels[width - 1 - col][row];
+        botPixel.setColor(topPixel.getColor());
+      }
+    } 
+  }
+    public void Righttoleft()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    int width = pixels[0].length;
+    for (int row = 0; row < pixels.length; row++)
+    {
+      for (int col = 0; col < width / 2; col++)
+      {
+        leftPixel = pixels[row][width - 1 - col];
+        rightPixel = pixels[row][col];
+        rightPixel.setColor(rightPixel.getColor());
+      }
+    } 
+  }
+   
   /** Mirror just part of a picture of a temple */
   public void mirrorTemple()
   {
@@ -205,14 +237,14 @@ public class Picture extends SimplePicture
   {
     Picture flower1 = new Picture("flower1.jpg");
     Picture flower2 = new Picture("flower2.jpg");
-    this.copy(flower1,0,0);
-    this.copy(flower2,100,0);
-    this.copy(flower1,200,0);
+    this.copy(flower1,0,10);
+    this.copy(flower2,100,20);
+    this.copy(flower1,200,30);
     Picture flowerNoBlue = new Picture(flower2);
     flowerNoBlue.zeroBlue();
-    this.copy(flowerNoBlue,300,0);
-    this.copy(flower1,400,0);
-    this.copy(flower2,500,0);
+    this.copy(flowerNoBlue,300,40);
+    this.copy(flower1,400,50);
+    this.copy(flower2,500,60);
     this.mirrorVertical();
     this.write("collage.jpg");
   }

@@ -82,7 +82,16 @@ public class PictureTester
     swan.edgeDetection(10);
     swan.explore();
   }
-  
+   
+  public static void testCopy()
+  {
+    Picture ocean= new Picture("beach.JPG");
+       Picture louisXVI = new Picture("snowman.JPG");
+         ocean.copy(louisXVI, 10,  230);
+       Picture flower = new Picture(" be.JPG");
+       ocean.copy(flower, 10 ,200);
+       ocean.explore();
+   }
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -105,7 +114,7 @@ public class PictureTester
     //testMirrorGull();
     testMirrorDiagonal();
     testCollage();
-    //testCopy();
+    testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
